@@ -181,7 +181,7 @@ Here is the final structure of our code:
 
 
 ## **Challenges**
-Now that you have officialy coded your first FRC robot its time to try writing a little bit of code yourself. These challenges work in increasing difficulty so make sure to go in order. If you get stuck, spend ~10min on your own trying to solve it before asking for help. One of the most important skills you will learn as a programmer is reading documentation and working through problems.
+Now that you have officialy coded your first FRC robot its time to try writing a little bit of code yourself. These challenges work in increasing difficulty so make sure to go in order. If you get stuck, spend ~10-20min on your own trying to solve it before asking for help. One of the most important skills you will learn as a programmer is reading documentation and working through problems. I would start with the first easy challenge as they get pretty hard after that and it will help ease you into programming on your own.
 
 Easier Challenges (these are still pretty hard):
 
