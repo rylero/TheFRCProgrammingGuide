@@ -1,0 +1,1269 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../8/">
+      
+      
+        <link rel="next" href="../../Advanced-FRC-Programming/1/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Programming Test Board - The FRC Programming Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="yellow">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#programming-test-board" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="The FRC Programming Guide" class="md-header__button md-logo" aria-label="The FRC Programming Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The FRC Programming Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Programming Test Board
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="The FRC Programming Guide" class="md-nav__button md-logo" aria-label="The FRC Programming Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The FRC Programming Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to the Frc Programming Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Basic Frc Programming
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Basic Frc Programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    First Steps with WPILib
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Command Based Programming Theory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic Subsystems and Commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Triggers and User Input
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Fundamentals of Controls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The TalonFX Motor Controller
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Advanced Commands and Command Groups
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic Logging and Visualization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Programming Test Board
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programming Test Board
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#test-board-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Board Components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-the-code-for-your-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting the Code for your Subsystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Starting the Code for your Subsystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminal-basics-cd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminal Basics: CD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clone-the-codebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clone the Codebase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opening-in-vscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opening in VSCode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-and-deploying-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building and Deploying Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coding-our-first-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coding our first Subsystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coding our first Subsystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-our-first-motorcontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating our first MotorController
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spinning-the-motor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spinning the Motor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triggers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenges
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Advanced Frc Programming
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced Frc Programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced-FRC-Programming/1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Suppliers, Comsumers, and Optionals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced-FRC-Programming/2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Swerve with CTRE Swerve Drive
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced-FRC-Programming/3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pathplanning with Pathplanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced-FRC-Programming/4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vision with PhotonVision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced-FRC-Programming/5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AdvantageKit and Replay Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced-FRC-Programming/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Physics Simulation with MapleSim
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced-FRC-Programming/7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit Testing and Mocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How To Troubleshoot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#test-board-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Board Components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-the-code-for-your-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting the Code for your Subsystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Starting the Code for your Subsystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminal-basics-cd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminal Basics: CD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clone-the-codebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clone the Codebase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opening-in-vscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opening in VSCode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-and-deploying-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building and Deploying Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coding-our-first-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coding our first Subsystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coding our first Subsystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-our-first-motorcontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating our first MotorController
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spinning-the-motor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spinning the Motor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triggers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenges
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="programming-test-board"><strong>Programming Test Board</strong></h1>
+<p>For our first programming project we will be focusing on the programming test board. Its a simple board with a motor, computer, and battery that will allow us to test deploying code and control logic.</p>
+<figure>
+    <img alt="Programming Test Board" src="../../img/test_board.webp" width="600" />
+<br />
+<figcaption>The 6238 Programming Test Board</figcaption>
+</figure>
+<h2 id="test-board-components"><strong>Test Board Components</strong></h2>
+<p>To begin lets go over the components of the test board. The test board contains a roborio, the main computer, which runs our robot and communicates with the other components on the board. Next we have a PDP, or power distibution port, which manages the power onboard the circut. It takes in the battery voltage through the breaker and distributes it to all the motors and to the roborio. Finally we have the actual motor, in this case a Falcon 500. The Falcon 500 is a powerful motor with a built in motor controller for precise and accurate movement. Everything is connected through the CAN bus which allows for data transfer between all robot components.</p>
+<figure>
+    <img alt="Wiring Diagram" src="../../img/test_board_diagram.png" width="600" />
+<br />
+<figcaption>Wiring Diagram of the Programming Test Board</figcaption>
+</figure>
+<figure>
+    <img alt="Can" src="../../img/pcm-can.jpg" width="300" />
+<br />
+<figcaption>This is the can bus. Here you can see it connected to the roborio and pdp. It is a set of green and yellow wires twisted together to transmit data.</figcaption>
+</figure>
+<h2 id="starting-the-code-for-your-subsystem"><strong>Starting the Code for your Subsystem</strong></h2>
+<p>Start by opening WPILib VScode on one of the driver station laptops. Once VScode is opened click the terminal tab bar in the top bar and click new terminal. Once the terminal is opened you can clone the codebase and open it following the instructions below.</p>
+<h3 id="terminal-basics-cd"><strong>Terminal Basics: CD</strong></h3>
+<p>The <code>cd</code> command is commonly used when navigating the terminal. It allows you to navigate to different folders in the terminal. <code>cd &lt;folder&gt;</code> allows you to go into a specific folder. <code>cd ..</code> goes back a folder into the parent folder. </p>
+<h3 id="clone-the-codebase"><strong>Clone the Codebase</strong></h3>
+<p>To clone the codebase we need to use the cd command to go to the desktop folder. Once you opened the terminal from the top bar type the following command inside: <code>cd Desktop</code> and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to run it. Then type the following command: <code>git clone https://github.com/6238/ProgrammingTestBoard.git &lt;&lt;YourName&gt;&gt;</code> and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to run it.</p>
+<h3 id="opening-in-vscode"><strong>Opening in VSCode</strong></h3>
+<p>Once you have cloned the codebase open the folder in vscode by clicking File -&gt; Open Folder.. and selecting the Desktop/&lt;<YourName>&gt; Folder. Now your ready to begin coding!</p>
+<h2 id="building-and-deploying-code"><strong>Building and Deploying Code</strong></h2>
+<p>Now that we have a basic frc codebase its time to build and deploy our code!
+To build and deploy our code to a robot relies on the command pallette. Open the command pallette with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span> and type <code>WPILib deploy</code> and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to deploy.</p>
+<p>When you run deploy wpilib will check to see if a robot is connected. Since the platform is not currently connected, it should error.
+Here, Deploy will open a terminal at the bottom of your screen allowing you to see if any errors occur during the build process. These could be formatting errors, connectino errors, or code mistakes. Since the robot is not connected, if you scroll up you should see an error saying that the roboRIO could not be detected.</p>
+<p>To fix this, we need to connect to the test platform. Start by flipping the circut breaker with the battery connected and plugging in an ethernet cable into the roboRIO's ethernet port, connecting it to the driverstation laptop. On the laptop make sure to open the driverstation app through the windows menu. This program allows you to connect the robot and enable it. Once the robot is conncted (you see this on the driverstation app), use the <code>WPILib deploy</code> command again to deploy the code to the robot and test.</p>
+<figure>
+    <img alt="Driver station" src="../../img/ds.png" width="600" />
+<br />
+<figcaption>This is the driver station. Make sure to set it to Teleoperated instead of Practice mode.</figcaption>
+</figure>
+<h2 id="coding-our-first-subsystem"><strong>Coding our first Subsystem</strong></h2>
+<p>To code our first ever subsystem type open the search pallette with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-p">P</kbd></span> and type <code>MotorSubsystem.java</code> and press Enter.
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">frc.robot.subsystems</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.wpilibj2.command.SubsystemBase</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MotorSubsystem</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">SubsystemBase</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">MotorSubsystem</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<div class="admonition danger">
+<p class="admonition-title">IMPORTANT</p>
+<p>Remember to always press ++Ctrl+S++ to save your code after every edit! I have forgotten to do this far too many times :(</p>
+</div>
+<p><code>public class MotorSubsystem extends SubsystemBase</code> is the line that defines our subsystem class. Classes are like cookie cutters, defining how an object should be structured. We can instantiate classes with the new keyword just like how you would use a cookie cutter to cut out a cookie (object).</p>
+<p><code>extends Subsystem</code> means that our class will be recognized as a subsystem and inherit special propeties.</p>
+<p>Finally <code>public MotorSubsystem()</code> is our constructor. It defines what needs to happen whenever a new object is created using that class.</p>
+<p>If the code still doesn't make sense, thats ok. Classes, constructors and object are very difficult and require more practice to be able to fully understand. If your interseted in learning more this video has a great explanation for classes, objects, and properties: <a href="https://www.youtube.com/watch?v=IUqKuGNasdM">https://www.youtube.com/watch?v=IUqKuGNasdM</a></p>
+<h3 id="creating-our-first-motorcontroller"><strong>Creating our first MotorController</strong></h3>
+<p>Now its time to create our first motor controller. This object allows us connect with a motor on our robot and sent control messages to it. In this case, our test platform uses a TalonFX controller so we will use the same object in our code. Modify your code to look like the following:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">frc.robot.subsystems</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">com.ctre.phoenix6.hardware.TalonFX</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.wpilibj2.command.SubsystemBase</span><span class="p">;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MotorSubsystem</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">SubsystemBase</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">TalonFX</span><span class="w"> </span><span class="n">motor</span><span class="p">;</span><span class="w"> </span><span class="c1">// Define the motor controller variable</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">MotorSubsystem</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="n">motor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TalonFX</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"> </span><span class="c1">// Instantiate the motor controller with an ID of 10</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Here we create a TalonFX motor controller by defining it in the class and then creating it in the contstructor. Notice how the names in code match the names of things in the real world. This is because code often mirrors the mechanism that it tries to control.</p>
+<p>We store this motor controller in something called a variable. Variables are like little boxes that can hold our objects when programming. In this case we create a variable called motor that holds a TalonFX motor controller. Note that when creating the controller we use the syntax <code>motor = new TalonFX(10);</code>. This code creates a new instance of the TalonFX class (like using the cookie cutter to create a new cookie) and passes in 10 for the ID meaning, tying that motor controller to the motor with ID 10.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>//</code> symbol defines a comment. All characters on this line after the symbol are not processed by the code and are ignored.
+Notice that many of the lines of code end with a semicolon. This is part of the java syntax and the only lines that dont end with semicolons usually end with open or closed braces.</p>
+</div>
+<h3 id="spinning-the-motor"><strong>Spinning the Motor</strong></h3>
+<p>Just a few more steps before we can finally spin the motor! Now we need to create something called a command. Commands are a way of running code in FRC. For our code we only need to know about the simplest type of command: <code>runOnce()</code>. This create a command that will run a function once, about as simple as it gets.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Functions are a way to reuse a piece of code. For example, I can create a function that spins a motor called <code>spin</code>. Then whenever I want to spin the motor, all I have to do is write <code>spin();</code> and that will run the code inside the spin function.</p>
+</div>
+<p>Lets create a simple runOnce command to spin the motor at a set speed. Modify your code to look like the following:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">frc.robot.subsystems</span><span class="p">;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">com.ctre.phoenix6.hardware.TalonFX</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.wpilibj2.command.Command</span><span class="p">;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.wpilibj2.command.SubsystemBase</span><span class="p">;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MotorSubsystem</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">SubsystemBase</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">TalonFX</span><span class="w"> </span><span class="n">motor</span><span class="p">;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">MotorSubsystem</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="n">motor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TalonFX</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Command</span><span class="w"> </span><span class="nf">spin</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">runOnce</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">motor</span><span class="p">.</span><span class="na">setVoltage</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Command</span><span class="w"> </span><span class="nf">stop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">runOnce</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">motor</span><span class="p">.</span><span class="na">setVoltage</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<p>Here we create two commands. One called <code>spin</code> which sets the motor voltage to 3 volts, and another called <code>stop</code> which sets the motor voltage to 0 volts. Each of these fuctions returns a command that calls a piece of code, in this case the <code>motor.setVoltage</code> function. Note the -&gt; operator. This is a symbol that creates a one line function, allow us to call motor.setVoltage(3) in a function, and then pass that into the runOnce command, all in one line.</p>
+<h3 id="triggers"><strong>Triggers</strong></h3>
+<p>Our final step before spinning the motor for the very first time. To spin the motor we need to go to <code>RobotContainer.java</code>. To do this open the search pallette with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-p">P</kbd></span> and search for it. This file contains all the triggers and subsystem setup for our code. In this file write the following code:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">frc.robot</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.wpilibj2.command.Command</span><span class="p">;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.wpilibj2.command.Commands</span><span class="p">;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.wpilibj2.command.button.CommandXboxController</span><span class="p">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">frc.robot.subsystems.MotorSubsystem</span><span class="p">;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RobotContainer</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">MotorSubsystem</span><span class="w"> </span><span class="n">motorSubsystem</span><span class="p">;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">CommandXboxController</span><span class="w"> </span><span class="n">controller</span><span class="p">;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">RobotContainer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="n">motorSubsystem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MotorSubsystem</span><span class="p">();</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="n">controller</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CommandXboxController</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="n">configureBindings</span><span class="p">();</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">configureBindings</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="n">controller</span><span class="p">.</span><span class="na">a</span><span class="p">().</span><span class="na">onTrue</span><span class="p">(</span><span class="n">motorSubsystem</span><span class="p">.</span><span class="na">spin</span><span class="p">());</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="n">controller</span><span class="p">.</span><span class="na">a</span><span class="p">().</span><span class="na">onFalse</span><span class="p">(</span><span class="n">motorSubsystem</span><span class="p">.</span><span class="na">stop</span><span class="p">());</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">Command</span><span class="w"> </span><span class="nf">getAutonomousCommand</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Commands</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;No autonomous command configured&quot;</span><span class="p">);</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Our code for <code>RobotContainer.java</code> is structured into two parts. First, we create a motorSubsystem and <code>CommandXboxController</code> the same way we did for the TalonFX controller in our <code>MotorSubsystem</code> class. Second, we call the <code>configureBindings()</code> method. This method is where we setup an triggers for our commands.</p>
+<p>Here is where the power of commands begins to show. In configure bindings we put <code>controller.a().onTrue(motorSubsystem.spin());</code>. This code exectues in the the following way:</p>
+<figure>
+    <img alt="Trigger Diagram" src="../../img/trigger_code_diagram.png" width="600" />
+<br />
+<figcaption>Diagram of the Trigger Line of Code</figcaption>
+</figure>
+<p>Now that we have written triggers for our commands, its time to test! Deploy the robot code to the test platform, open the driver station, and when ready, click enable and teleop mode in the driver station to test it out!</p>
+<p>Here is the final structure of our code:
+<img alt="Code Structure" src="../../img/code_structure.png" width="600" /></p>
+<h2 id="challenges"><strong>Challenges</strong></h2>
+<p>Now that you have officialy coded your first FRC robot its time to try writing a little bit of code yourself. These challenges work in increasing difficulty so make sure to go in order. If you get stuck, spend ~10min on your own trying to solve it before asking for help. One of the most important skills you will learn as a programmer is reading documentation and working through problems.</p>
+<p>Easier Challenges (these are still pretty hard):</p>
+<ol>
+<li>
+<p>Try changing the voltage you set the spin motor to. Try any voltage between 0 and 12 volts and see how it effects the motor!</p>
+</li>
+<li>
+<p>Try creating a new command. Look at the two commands we already created and create a new one, called <code>spinFast</code> that runs the motor at a higher voltage than <code>spin</code>. Make sure to bind it to the b button press and bind the b buttons release to your stop command.</p>
+</li>
+<li>
+<p>Create a new control scheme. Instead of pressing and releasing to control the motor speed, try something different. For example, when a is pressed, spin, when b is pressed, spin fast, and when c is pressed, stop.</p>
+</li>
+</ol>
+<p>Medium Challenges (these will require some research):</p>
+<ol>
+<li>Create an autonomouse command. Replace the autonomous command in the RobotContainer with a custom command that spins the motor for 1 second and then stops. Hint: use <code>Commands.sequence</code> and <code>Commands.waitSeconds</code> This page may help: <a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html">Commands Java Doc</a></li>
+</ol>
+<p>Hard Challenges (these will require a lot research and debugging):</p>
+<ol>
+<li>
+<p>Try to log the current position and velocity of the motor. This will require using SmartDashboard and the status signals from the motor. Use AdvantageScope to view the logged values. Hint: Use <code>SmartDashboard.putNumber(name, value)</code> to log a value. Use <code>motor.getPosition().getValueAsDouble()</code> to find values for status signals of the motor. Similar methods exsist for velocity. <a href="https://docs.advantagescope.org/">Advantage Scope Docs</a>, <a href="https://v6.docs.ctr-electronics.com/en/stable/docs/api-reference/api-usage/status-signals.html">Status Signal Docs</a>, <a href="https://docs.wpilib.org/en/stable/docs/software/dashboards/smartdashboard/displaying-expressions.html">Smart Dashboard (Ignore Widgets Section)</a></p>
+</li>
+<li>
+<p>Try to use position control on the motor. Use TalonFX control with simple PID to control the position. Hint: You will need to use <code>TalonFXConfiguration</code> and <code>PositionVoltage</code> along with the <code>motor.setControl</code> function. The first section of these docs will be very helpful: <a href="https://v6.docs.ctr-electronics.com/en/stable/docs/api-reference/device-specific/talonfx/basic-pid-control.html">TalonFX Docs</a></p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>
