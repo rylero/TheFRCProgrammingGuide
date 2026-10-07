@@ -1,4 +1,4 @@
-# **Programming Test Board**
+# **My First Robot Project**
 
 For our first programming project we will be focusing on the programming test board. Its a simple board with a motor, computer, and battery that will allow us to test deploying code and control logic.
 
@@ -195,8 +195,4 @@ Medium Challenges (these will require some research):
 
 1. Create an autonomouse command. Replace the autonomous command in the RobotContainer with a custom command that spins the motor for 1 second and then stops. Hint: use ```Commands.sequence``` and ```Commands.waitSeconds``` This page may help: <a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html">Commands Java Doc</a>
 
-Hard Challenges (these will require a lot research and debugging):
-
-1. Try to log the current position and velocity of the motor. This will require using SmartDashboard and the status signals from the motor. Use AdvantageScope to view the logged values. Hint: Use ```SmartDashboard.putNumber(name, value)``` to log a value. Use ```motor.getPosition().getValueAsDouble()``` to find values for status signals of the motor. Similar methods exsist for velocity. <a href="https://docs.advantagescope.org/">Advantage Scope Docs</a>, <a href="https://v6.docs.ctr-electronics.com/en/stable/docs/api-reference/api-usage/status-signals.html">Status Signal Docs</a>, <a href="https://docs.wpilib.org/en/stable/docs/software/dashboards/smartdashboard/displaying-expressions.html">Smart Dashboard (Ignore Widgets Section)</a>
-
-2. Try to use position control on the motor. Use TalonFX control with simple PID to control the position. Hint: You will need to use ```TalonFXConfiguration``` and ```PositionVoltage``` along with the ```motor.setControl``` function. The first section of these docs will be very helpful: <a href="https://v6.docs.ctr-electronics.com/en/stable/docs/api-reference/device-specific/talonfx/basic-pid-control.html">TalonFX Docs</a>
+The next lessons take this same subsystem apart: what a subsystem is, what a command is, how triggers schedule those commands, then position control and logging. The final test at the end of this section is where those pieces get combined.

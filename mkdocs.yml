@@ -8,34 +8,43 @@ theme:
 watch:
   - docs
   - docs/Basic-FRC-Programming
+  - docs/Mechanisms-and-Motion
   - docs/Advanced-FRC-Programming
 
 nav:
   - Welcome to the Frc Programming Guide: 'index.md'
   - Basic Frc Programming:
-    - 'Basic-FRC-Programming/1.md'
-    - 'Basic-FRC-Programming/2.md'
-    - 'Basic-FRC-Programming/3.md'
-    - 'Basic-FRC-Programming/4.md'
-    - 'Basic-FRC-Programming/5.md'
-    - 'Basic-FRC-Programming/6.md'
-    - 'Basic-FRC-Programming/7.md'
-    - 'Basic-FRC-Programming/8.md'
     - 'Basic-FRC-Programming/programming_test_board.md'
-  - Advanced Frc Programming:
-    - 'Advanced-FRC-Programming/1.md'
-    - 'Advanced-FRC-Programming/2.md'
-    - 'Advanced-FRC-Programming/3.md'
-    - 'Advanced-FRC-Programming/4.md'
-    - 'Advanced-FRC-Programming/5.md'
-    - 'Advanced-FRC-Programming/6.md'
-    - 'Advanced-FRC-Programming/7.md'
-  - How To Troubleshoot: 'troubleshooting.md'
-  - Notes: 'notes.md'
+    - 'Basic-FRC-Programming/subsystem.md'
+    - 'Basic-FRC-Programming/commands.md'
+    - 'Basic-FRC-Programming/command_based.md'
+    - 'Basic-FRC-Programming/triggers.md'
+    - 'Basic-FRC-Programming/talonfx_position.md'
+    - 'Basic-FRC-Programming/logging.md'
+    - 'Basic-FRC-Programming/final_test.md'
+  # Hidden until Basic FRC Programming is in good shape:
+  # - Mechanisms and Motion:
+  #   - 'Mechanisms-and-Motion/talonfx_control.md'
+  #   - 'Mechanisms-and-Motion/command_groups.md'
+  #   - 'Mechanisms-and-Motion/swerve.md'
+  #   - 'Mechanisms-and-Motion/final_test.md'
+  # - Advanced Frc Programming:
+  #   - 'Advanced-FRC-Programming/1.md'
+  #   - 'Advanced-FRC-Programming/2.md'
+  #   - 'Advanced-FRC-Programming/3.md'
+  #   - 'Advanced-FRC-Programming/4.md'
+  #   - 'Advanced-FRC-Programming/5.md'
+  #   - 'Advanced-FRC-Programming/6.md'
+  #   - 'Advanced-FRC-Programming/7.md'
+  # - How To Troubleshoot: 'troubleshooting.md'
+  # - Notes: 'notes.md'
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/chart.js
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+validation:
+  omitted_files: ignore
 
 markdown_extensions:
   - pymdownx.highlight:
