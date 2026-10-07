@@ -473,9 +473,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#challenges" class="md-nav__link">
+  <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Challenges
+      Requirements
     </span>
   </a>
   
@@ -524,9 +524,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#challenges" class="md-nav__link">
+  <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Challenges
+      Requirements
     </span>
   </a>
   
@@ -549,37 +549,16 @@
 
 
 <h1 id="final-test"><strong>Final Test</strong></h1>
-<p>This is on the test board, in the <code>MotorSubsystem</code> you have been editing. Go back and reread whatever you need. Try not to paste a finished command straight off the earlier pages. The point is to build it again from the pieces.</p>
-<p>If you get stuck, spend ~10-20min on the step you are on before asking for help.</p>
-<h2 id="challenges"><strong>Challenges</strong></h2>
-<p>Do them in order. Each one should still be on the robot when you start the next, so by the end you have all of it at once.</p>
-<p>Easier:</p>
-<ol>
-<li>
-<p>In the constructor, apply a <code>TalonFXConfiguration</code> with <code>Slot0.kP</code> set and neutral mode set to brake. Deploy. If it does not compile, the imports are the usual reason.</p>
-</li>
-<li>
-<p>Add a command that holds a position with <code>PositionVoltage</code>, and keep calling <code>setControl</code> while it runs. Bind one button to a target a few rotations away, and another button back to 0. Enable and run both.</p>
-</li>
-</ol>
-<p>Medium:</p>
-<ol>
-<li>
-<p>Log measured position, measured velocity, and the target from <code>periodic()</code>. Open AdvantageScope, connect, and put position and target on one graph. Run the move. The target should step, and the position should go meet it.</p>
-</li>
-<li>
-<p>Find a kP that holds without oscillating, and try one that is obviously too high and one that is obviously too low. Leave the good one in the code. Put the bad ones in a comment so you remember what they did.</p>
-</li>
-</ol>
-<p>Hard:</p>
-<ol>
-<li>
-<p>Make the "go to position" command finish by itself when it is close, and bind it with <code>onTrue</code>. Letting go of the button early should not cancel the move. The "go back to 0" button should still be able to interrupt it, because both commands need the subsystem.</p>
-</li>
-<li>
-<p>Show someone the graph of one clean move and one bad kP. You should be able to point at the lines and say what the motor did, not just that "it worked."</p>
-</li>
-</ol>
+<p>Do this on the test board with the <code>MotorSubsystem</code> you already have. You are finished when every requirement below is true.</p>
+<h2 id="requirements"><strong>Requirements</strong></h2>
+<ul>
+<li>[ ] The TalonFX is configured in the subsystem constructor with a <code>kP</code> and brake neutral mode.</li>
+<li>[ ] One button drives the motor to a position a few rotations away from 0. The motor still goes there and holds after the button is released.</li>
+<li>[ ] A second button drives the motor back to 0 and holds there after that button is released.</li>
+<li>[ ] <code>periodic()</code> logs measured position, measured velocity, and the target.</li>
+<li>[ ] AdvantageScope shows one run with both button presses. The target changes, and the measured position meets it without oscillating.</li>
+</ul>
+<p>If you get stuck, spend ~10-20min on the requirement that is failing before asking for help.</p>
 
 
 

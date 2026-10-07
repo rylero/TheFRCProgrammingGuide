@@ -643,28 +643,14 @@
 <p><code>whileTrue</code> is what you want when the action should last exactly as long as the button. <code>onTrue</code> is what you want when the action should start and then finish by itself, like a move to a position.</p>
 <p>Deploy, set the driver station to teleop, enable, and try both buttons.</p>
 <h2 id="challenges"><strong>Challenges</strong></h2>
-<p>Stay on the test board. If you get stuck, spend ~10-20min before asking for help.</p>
-<p>Easier:</p>
+<p>If you get stuck, spend ~10-20min before asking for help.</p>
 <ol>
 <li>
-<p>Bind X to <code>holdVoltage(1)</code> with <code>whileTrue</code>. Deploy and feel how different 1 volt is from 6.</p>
+<p>Bind X to <code>holdVoltage(1)</code> with <code>whileTrue</code>. Deploy and press X, then B. 1 volt should be much slower than 6.</p>
 </li>
 <li>
-<p>Change A from <code>whileTrue</code> to <code>onTrue</code> and deploy. Press A and let go. With <code>runEnd</code>, think about whether the motor stops. Try it, then put A back to <code>whileTrue</code> if you want the hold behavior.</p>
+<p>Hold A, and while you are still holding it, press B. The motor should switch to B's voltage. Only one command can use the subsystem at a time.</p>
 </li>
-</ol>
-<p>Medium:</p>
-<ol>
-<li>
-<p>Bind the right bumper to <code>spin()</code> and the left bumper to <code>holdVoltage(2)</code>. Hold one, then tap the other, and watch which one survives. Only one subsystem command should be running.</p>
-</li>
-<li>
-<p>Read the triggers on <code>CommandXboxController</code> besides the letter buttons. Bind one of the sticks' Y axis... actually do not bind an axis yet. Axes are not buttons. Find <code>controller.rightTrigger()</code> in the autocomplete and bind that to <code>holdVoltage</code> with <code>whileTrue</code>. The trigger is a button for this. The stick axis is a number, and we are not there yet.</p>
-</li>
-</ol>
-<p>Hard:</p>
-<ol>
-<li>Make the motor speed follow the right stick while the right bumper is held, and stop when the bumper is released. Hint: the stick is <code>controller.getRightY()</code>, and you can pass that into a command that reads it every cycle inside <code>run</code>. Deadband it a little or the motor will hum on a stick that is not perfectly centered. WPILib has <code>MathUtil.applyDeadband</code>.</li>
 </ol>
 
 

@@ -695,23 +695,13 @@
 <p>When a button schedules a command, the scheduler puts it on a list. Every cycle it calls <code>execute()</code> and <code>isFinished()</code> on whatever is on that list. If the new command needs a subsystem that is already in use, the scheduler calls <code>end(true)</code> on the old one and then starts the new one. When a command finishes, it gets taken off the list.</p>
 <p><code>runOnce</code> on <code>MotorSubsystem</code> also requires the subsystem for us. That single line is a whole command. Next lesson we will use a couple more helpers for jobs that need to keep running.</p>
 <h2 id="challenges"><strong>Challenges</strong></h2>
-<p>Deploy after each one and watch the motor, or the Riolog. If you get stuck, spend ~10-20min on it before asking for help.</p>
-<p>Easier:</p>
+<p>If you get stuck, spend ~10-20min before asking for help.</p>
 <ol>
 <li>
-<p>Inside the <code>spin()</code> lambda, add <code>System.out.println("spin");</code> next to the <code>setVoltage</code>. Press A a few times. You should get one print per press, because <code>runOnce</code> runs once and finishes.</p>
+<p>In <code>spin()</code>, add <code>System.out.println("spin");</code> next to <code>setVoltage</code>. Deploy, press A a few times, and look at RioLog. You should get one line per press. Then take the print out.</p>
 </li>
 <li>
-<p>Change 3 volts to 1 volt, deploy, and press A. Then try 8. Put it back to something that does not scare you.</p>
-</li>
-</ol>
-<p>Medium:</p>
-<ol>
-<li>
-<p>Open <code>Robot.java</code> with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-p">P</kbd></span> and find where the scheduler is run. It is a one line call inside the robot's periodic method. You do not need to change it. You need to know it is already there so you stop looking for a loop inside your subsystem.</p>
-</li>
-<li>
-<p>Make a second command called <code>stop</code> that is a <code>runOnce</code> setting the voltage to 0. Do not bind it yet. Just get it to compile. We bind it in the triggers lesson.</p>
+<p>You should already have <code>stop()</code> from the first project. If you do not, add it: a <code>runOnce</code> that sets the voltage to 0. It just needs to compile. We will bind it again in the next lesson.</p>
 </li>
 </ol>
 

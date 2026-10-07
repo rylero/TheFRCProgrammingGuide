@@ -635,24 +635,9 @@
 <h2 id="one-command-at-a-time"><strong>One Command at a Time</strong></h2>
 <p>Only one command is allowed to use a subsystem at a time. If a new command needs <code>MotorSubsystem</code> while another one already has it, the scheduler stops the old command and starts the new one. You do not write that stop yourself. Requiring the subsystem is enough, and the command helpers do that for you.</p>
 <h2 id="challenges"><strong>Challenges</strong></h2>
-<p>Try these on the test board before you move on. If you get stuck, spend ~10-20min on your own before asking for help.</p>
-<p>Easier:</p>
+<p>If you get stuck, spend ~10-20min before asking for help.</p>
 <ol>
-<li>
-<p>Put <code>System.out.println("subsystem created");</code> inside the constructor. Deploy, open the Riolog (the driver station console, or the WPILib RioLog in VS Code), and find that line. Then delete the print. Prints in a constructor run once. That is the point.</p>
-</li>
-<li>
-<p>Change the CAN id from 10 to 11, deploy, and try to spin the motor with the code from the last project. It should do nothing useful. Put it back to 10.</p>
-</li>
-</ol>
-<p>Medium:</p>
-<ol>
-<li>
-<p>Add a counter in <code>periodic()</code> and print it every time it is a multiple of 50. Deploy and watch the console. You should see a new number about once a second, because <code>periodic()</code> is running about 50 times a second. Take the print out when you are done so the log is not full of numbers.</p>
-</li>
-<li>
-<p>In <code>RobotContainer</code>, try to write <code>motorSubsystem.motor.setVoltage(3);</code>. It should not compile, because <code>motor</code> is private. That is what we want. The next lesson is how the rest of the code is supposed to ask the subsystem to move.</p>
-</li>
+<li>Put <code>System.out.println("subsystem created");</code> as the first line inside the constructor. Save, deploy, and open RioLog. You should see that line once. Then delete the print.</li>
 </ol>
 
 

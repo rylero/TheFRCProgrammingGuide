@@ -647,23 +647,14 @@
 </span></code></pre></div>
 <p>These methods are public so <code>RobotContainer</code> can call them. They return a command. They do not move the motor at the moment you call them. The next lesson hooks them up to buttons.</p>
 <h2 id="challenges"><strong>Challenges</strong></h2>
-<p>Code these in <code>MotorSubsystem</code> and deploy. If you get stuck, spend ~10-20min before asking for help.</p>
-<p>Easier:</p>
+<p>If you get stuck, spend ~10-20min before asking for help.</p>
 <ol>
 <li>
-<p>Add <code>spinFast()</code> that is a <code>runEnd</code> at a higher voltage than <code>spin()</code>, and that sets the voltage back to 0 when it ends. Do not bind it yet if you do not want to. Getting it to compile is the goal.</p>
+<p>Add <code>spinFast()</code> the same way as <code>spin()</code>, but use 6 volts instead of 3. It should still set the voltage to 0 when the command ends.</p>
 </li>
 <li>
-<p>Call <code>holdVoltage(4)</code> from a scratch <code>public Command</code> named <code>test</code> that just returns it. Then delete <code>test</code>. The point is seeing that a command method can call another command method.</p>
+<p>In <code>RobotContainer</code>, bind B to <code>spinFast()</code> the same way A is bound to <code>spin()</code>. Deploy, enable, and try A and B.</p>
 </li>
-</ol>
-<p>Medium:</p>
-<ol>
-<li>Change <code>holdVoltage</code> so it refuses to send more than 8 volts or less than -8. Use <code>Math.min</code> and <code>Math.max</code> inside the lambda, or clamp before the <code>run</code>. Deploy is optional for this one. Read the method back and make sure a call with 12 cannot actually send 12.</li>
-</ol>
-<p>Hard:</p>
-<ol>
-<li>Look up <code>startEnd</code> on <code>Subsystem</code> in the WPILib docs. It runs one lambda when the command starts and one when it ends, and it does not keep running in between. Make a <code>pulse</code> command with it that sets 6 volts on start and 0 on end. Compare what it does to <code>runEnd</code> when you hold the button. We will bind buttons in the next lesson, so you can wait and try this one after that if you want: <a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Subsystem.html">Subsystem Java Doc</a></li>
 </ol>
 
 

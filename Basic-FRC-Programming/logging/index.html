@@ -625,28 +625,14 @@
 <p>AdvantageScope can also open a <code>.wpilog</code> later and replay a match. This lesson is only the live connection. If a field is missing, enable the robot once. Nothing gets published until the code is running.</p>
 </div>
 <h2 id="challenges"><strong>Challenges</strong></h2>
-<p>Do these with AdvantageScope open. If you get stuck, spend ~10-20min before asking for help. The <a href="https://docs.advantagescope.org/">AdvantageScope docs</a> are worth having open for the last one.</p>
-<p>Easier:</p>
+<p>If you get stuck, spend ~10-20min before asking for help.</p>
 <ol>
 <li>
-<p>Also log the voltage with <code>motor.getMotorVoltage().getValueAsDouble()</code> under the name <code>Motor/Voltage</code>. Drag it onto the graph and press A. You should see voltage jump when the move starts.</p>
+<p>Also log <code>motor.getMotorVoltage().getValueAsDouble()</code> as <code>Motor/Voltage</code>. Drag it onto the graph and press A. Voltage should jump when the move starts, then settle when the shaft is holding.</p>
 </li>
 <li>
-<p>Scroll left after a move and hover the graph. Read the position and the target at the same time. Are they actually on top of each other at the end, or is the motor short?</p>
+<p>Scroll left and hover the end of the move. Position should be close to the target. If it is not, your <code>kP</code> from the last lesson is still off.</p>
 </li>
-</ol>
-<p>Medium:</p>
-<ol>
-<li>
-<p>Log a fourth number, <code>Motor/Error</code>, that is target minus measured position. After a good move it should settle near 0. If your kP is too small it will sit at some leftover error. Try it.</p>
-</li>
-<li>
-<p>Disconnect AdvantageScope, press a button, then connect again. The move you did while it was disconnected is gone from the live graph. That is why we will care about log files later. For now, just notice it.</p>
-</li>
-</ol>
-<p>Hard:</p>
-<ol>
-<li>Log the applied output with <code>motor.getClosedLoopReference().getValueAsDouble()</code> or, if that signal is not the one you want, <code>motor.getDutyCycle().getValueAsDouble()</code>. One of those will show you what the controller is actually asking for during the move. Get at least one extra TalonFX signal on the graph besides position and velocity. The status signal page is here: <a href="https://v6.docs.ctr-electronics.com/en/stable/docs/api-reference/api-usage/status-signals.html">Status Signals</a></li>
 </ol>
 
 
