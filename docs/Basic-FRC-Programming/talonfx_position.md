@@ -1,6 +1,37 @@
-# **Simple TalonFX Position Control**
+# **Simple TalonFX Control**
 
-```setVoltage(3)``` tells the motor how hard to push. It does not tell it where to stop. Position control does. We give the TalonFX a target in rotations, and the controller on the motor drives there.
+The TalonFX can be told two different things. Voltage control says how hard to push, in volts. Position control says where to go, in rotations. Both are sent with ```setControl```, and whichever request you sent last is the one the motor follows.
+
+## **Voltage Control**
+```setVoltage(3)``` from the earlier lessons is voltage control. The TalonFX version that matches position control is a ```VoltageOut``` request. You keep one request object and call ```withOutput``` with the volts you want.
+
+Add this next to the motor. Leave ```spin()``` and ```holdVoltage()``` if you still have them.
+
+```java
+import com.ctre.phoenix6.controls.VoltageOut;
+
+private final VoltageOut voltageRequest = new VoltageOut(0);
+
+public Command applyVoltage(double volts) {
+    return runEnd(
+        () -> motor.setControl(voltageRequest.withOutput(volts)),
+        () -> motor.setControl(voltageRequest.withOutput(0))
+    );
+}
+```
+
+```runEnd``` matters here. The first lambda sends the voltage every cycle. The second one sends 0 when the command stops, including when another command takes the subsystem. If you only use ```run```, letting go of the button cancels the command but the Falcon keeps the last voltage.
+
+Bind it so it only spins while the button is held:
+
+```java
+controller.x().whileTrue(motorSubsystem.applyVoltage(3));
+```
+
+Deploy and press X. The shaft should spin and stop when you let go. There is no target position. 3 volts is a gentle spin on this board. Stay under 6 until you know which way the shaft is clear.
+
+## **Position Control**
+Voltage does not tell the motor where to stop. Position control does. We give the TalonFX a target in rotations, and the controller on the motor drives there.
 
 We are only using one gain, kP, and we put it in a ```TalonFXConfiguration```.
 

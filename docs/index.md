@@ -5,7 +5,7 @@ Welcome to the FRC programming guide!
 1. Basic FRC Programming:
     * My First Robot Project, on the programming test board
     * subsystems, commands, and triggers
-    * simple TalonFX position control with kP
+    * simple TalonFX voltage and position control
     * logging with AdvantageScope
 
 Prerequisites:
