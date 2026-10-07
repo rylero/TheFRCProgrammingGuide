@@ -11,7 +11,7 @@ $$
 V = k_P \cdot (\text{target} - \text{measured})
 $$
 
-kP is volts per rotation of error. Bigger kP pushes harder for the same miss. Too small and the shaft crawls or stops short. Too big and it buzzes or slams past the target. On the unloaded test board Falcon, start at ```0.5```.
+kP is volts per rotation of error. Bigger kP pushes harder for the same miss. Too small and the shaft crawls or stops short. Too big and it oscillates or slams past the target. On the unloaded test board Falcon, start at ```0.5```.
 
 The number we send is rotor rotations. The default gear ratio is 1, so 1.0 is one turn of the motor shaft. Five rotations is a small move on this board. Do not start at 100.
 
@@ -57,7 +57,7 @@ controller.a().whileTrue(motorSubsystem.goToPosition(5));
 controller.b().whileTrue(motorSubsystem.goToPosition(0));
 ```
 
-Deploy, enable, press A. The shaft should turn about five rotations and hold. Press B and it should go back to where it was when the code booted. If it barely moves, try ```1.0```, then ```2.0```. If it buzzes, go back down. Change one number, redeploy, try again.
+Deploy, enable, press A. The shaft should turn about five rotations and hold. Press B and it should go back to where it was when the code booted. If it barely moves, try ```1.0```, then ```2.0```. If it oscillates, go back down. Change one number, redeploy, try again.
 
 !!! note
 
@@ -76,7 +76,7 @@ Medium:
 
 1. Bind X to ```goToPosition(-3)```. Make sure the shaft can spin that way without hitting a wire. Press A, then X, then B.
 
-2. Find a kP that is too high. You will know. Write the value in a comment next to ```config.Slot0.kP```, then put back a value that holds without buzzing. The comment is so you remember what "too hot" felt like.
+2. Find a kP that is too high. You will know. Write the value in a comment next to ```config.Slot0.kP```, then put back a value that holds without oscillating. The comment is so you remember what "too hot" felt like.
 
 Hard:
 

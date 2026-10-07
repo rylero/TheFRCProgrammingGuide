@@ -17,7 +17,7 @@ Medium:
 
 1. Log measured position, measured velocity, and the target from ```periodic()```. Open AdvantageScope, connect, and put position and target on one graph. Run the move. The target should step, and the position should go meet it.
 
-2. Find a kP that holds without buzzing, and try one that is obviously too high and one that is obviously too low. Leave the good one in the code. Put the bad ones in a comment so you remember what they did.
+2. Find a kP that holds without oscillating, and try one that is obviously too high and one that is obviously too low. Leave the good one in the code. Put the bad ones in a comment so you remember what they did.
 
 Hard:
 

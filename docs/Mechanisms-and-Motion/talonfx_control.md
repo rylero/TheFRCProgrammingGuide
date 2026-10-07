@@ -49,7 +49,7 @@ Zero every gain except the kP you already trust, and set kS, kV, kA, kI, and kD 
 2. **kV, cruise.** Command a move long enough to reach cruise. kV is volts per rotations-per-second of the *profile* velocity. Raise it until measured velocity matches the flat top of the profile. If measured cruise is low, kV is low.
 3. **kA, acceleration.** Watch the slope at the start of the move. Raise kA until measured velocity rises about as steeply as the profile. Leave it at 0 if the slope already matches.
 4. **kP, position error.** This is the same unit as the basic lesson: volts per rotation of position error. Raise it until the shaft reaches the target and holds it. Back off when it oscillates or slams the end of the move.
-5. **kD, velocity error.** Add a small kD only if kP overshoots. kD fights a velocity error. Too much kD buzzes. Leave kI at 0.
+5. **kD, velocity error.** Add a small kD only if kP overshoots. kD fights a velocity error. Too much kD oscillates. Leave kI at 0.
 
 There is no kG on the test board. kG is the constant voltage that holds an elevator or arm against gravity. Add it only for those mechanisms, before kS.
 
@@ -92,7 +92,7 @@ Zero slot 1, including kP. Command a steady speed, such as 20 rotations per seco
 
 1. **kS.** Raise it until the shaft is just about to turn, then back off one step.
 2. **kV.** With kP still 0, raise kV until the measured velocity sits on the target during the flat section. kV is doing almost all of the work. If the graph is short of the target by the same amount at every speed, kV is still low.
-3. **kP.** Raise it until a speed change settles quickly. Stop when the velocity line buzzes or chatters. Velocity kP is usually small, often under `0.5` on voltage control.
+3. **kP.** Raise it until a speed change settles quickly. Stop when the velocity line oscillates. Velocity kP is usually small, often under `0.5` on voltage control.
 4. **kD.** Leave it at 0 unless the speed oscillates after kP is set. kI stays 0.
 
 Bind it with `whileTrue`. Releasing the button runs the `runEnd` cleanup and drops the voltage to 0. A velocity loop left running will keep spinning.
