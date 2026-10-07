@@ -1,0 +1,643 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>CTRE Swerve and BasicSwerve - The FRC Programming Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="yellow">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ctre-swerve-and-basicswerve" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="The FRC Programming Guide" class="md-header__button md-logo" aria-label="The FRC Programming Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The FRC Programming Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CTRE Swerve and BasicSwerve
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="The FRC Programming Guide" class="md-nav__button md-logo" aria-label="The FRC Programming Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The FRC Programming Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to the Frc Programming Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Basic Frc Programming
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Basic Frc Programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basic-FRC-Programming/programming_test_board/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    My First Robot Project
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basic-FRC-Programming/subsystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    What is a Subsystem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basic-FRC-Programming/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    What are Commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basic-FRC-Programming/command_based/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic Command Based Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basic-FRC-Programming/triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Triggers and Inputs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basic-FRC-Programming/talonfx_position/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Simple TalonFX Position Control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basic-FRC-Programming/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Logging Basics and AdvantageScope
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basic-FRC-Programming/final_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Final Test
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-open-the-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before You Open the Generator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-tuner-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create the Tuner Project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-each-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Each Module
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-then-import-into-basicswerve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate, then Import into BasicSwerve
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ctre-swerve-and-basicswerve"><strong>CTRE Swerve and BasicSwerve</strong></h1>
+<p>The test board is one Falcon. A swerve drivetrain is eight TalonFX controllers, four CANcoders, and a Pigeon 2, with a steer motor and a drive motor on each corner. You do not hand-write that project. Phoenix Tuner X has a Swerve Project Generator that checks the modules and writes the drivetrain code.</p>
+<p>That generated project is not the team codebase. After Tuner X finishes, the generated constants and drivetrain are imported into <strong>BasicSwerve</strong>, the team repository. BasicSwerve is the project you clone, edit, and run.</p>
+<p>The generator steps below follow the <a href="https://v6.docs.ctr-electronics.com/en/stable/docs/tuner/tuner-swerve/index.html">CTRE Swerve Project Generator</a>. Use that manual if a screen does not match this page. Tuner X changes layout between seasons.</p>
+<h2 id="before-you-open-the-generator"><strong>Before You Open the Generator</strong></h2>
+<p>Tuner X has to see the real drivetrain. This part happens at the shop, with the robot on.</p>
+<ul>
+<li>Eight TalonFX (or TalonFXS) devices, four encoders (CANcoder, CANdi, or a TalonFXS with a PWM encoder), and one Pigeon 2</li>
+<li>Every device shows up in Tuner X, on the same CAN bus</li>
+<li>Firmware is current for the season, and the current year's diagnostic server is running</li>
+<li>Name the devices in Tuner before you start, such as <code>FL Steer</code> and <code>FL Drive</code>. The generator is painful to debug when every device is still called TalonFX</li>
+</ul>
+<p>Pro licensing and a CANivore are recommended. They are not required to generate the project.</p>
+<h2 id="create-the-tuner-project"><strong>Create the Tuner Project</strong></h2>
+<p>In Tuner X, open the Mechanisms page and start the Swerve Project Generator.</p>
+<ol>
+<li>Set the wheel radius, in inches. Measure the wheel width and divide by two.</li>
+<li>Set the track width and the wheelbase, from the center of one module to the center of the opposite module.</li>
+<li>Pick the module type. Swerve X, an SDS module, and anything else the list names are there. If the module is not listed, choose Custom and enter the drive ratio and the steer ratio yourself.</li>
+<li>Click <strong>New Project</strong>.</li>
+</ol>
+<p>Use <strong>Export</strong> in the top right when the project is set up, and keep that file. Regenerating from memory is how offsets get lost.</p>
+<h2 id="configure-each-module"><strong>Configure Each Module</strong></h2>
+<p>For each corner, in the module dropdown:</p>
+<ol>
+<li>Select the encoder.</li>
+<li>Select the steer motor.</li>
+<li>Select the drive motor.</li>
+<li>Run <strong>Encoder Calibration</strong>. Point the wheel the way the calibration popup asks, then let it record the CANcoder offset.</li>
+</ol>
+<p>Do all four modules. If you move an encoder to a different corner, calibrate that module again. When the last module is done, click <strong>Configuration Completed</strong>.</p>
+<p>The generator factory-defaults devices so the steer and drive tests mean something. Robot code should be what applies configs at runtime. If you had hand-tuned configs only inside Tuner, back them up first.</p>
+<h2 id="validate"><strong>Validate</strong></h2>
+<p><strong>Verify Steer.</strong> The test rotates every module. Looking down at the modules, they should turn counter-clockwise. If they do not, the steer invert is wrong. Fix it in the generator. Do not patch it later in Java.</p>
+<p><strong>Verify Drive.</strong> Modules go to their zero heading, then the drive motors run at a small duty cycle. Decide whether the robot would have moved forward or backward. Forward on the left side is counter-clockwise when you look from outside the robot. If a wheel is sideways, the CANcoder offset is wrong. Go back, point the bevel the way the calibration step required, and calibrate again.</p>
+<p>Do not generate until both tests pass. A generated project remembers a bad offset faithfully.</p>
+<h2 id="generate-then-import-into-basicswerve"><strong>Generate, then Import into BasicSwerve</strong></h2>
+<p><strong>Generate Project</strong> asks for the team number and for Java. That writes a full robot program, including <code>TunerConstants</code> and the drivetrain subsystem. <strong>Generate only TunerConstants</strong> rewrites the constants file for a project that already has the drivetrain class. Use that button when BasicSwerve is already there and only the measurements or offsets changed.</p>
+<p>Import means copying the generated swerve code into BasicSwerve. It does not mean replacing BasicSwerve with the generated project.</p>
+<ol>
+<li>Clone the team BasicSwerve repository and open it in WPILib VS Code.</li>
+<li>From the generated project, copy <code>src/main/java/frc/robot/generated/TunerConstants.java</code> into the same path in BasicSwerve. Replace the file that is there.</li>
+<li>If BasicSwerve's drivetrain class is still the stock generated <code>CommandSwerveDrivetrain</code>, copy that file over too. If the team class has been edited, keep the team class and only update <code>TunerConstants</code>.</li>
+<li>Leave BasicSwerve's <code>RobotContainer</code>, simulation, and logging alone. Those are the reason this repo exists. The generated <code>RobotContainer</code> is a demo, not the team robot.</li>
+</ol>
+<p>Commit the imported files on a branch. The next person should be able to see that the constants changed and the rest of the repo did not.</p>
+<div class="admonition note">
+<p class="admonition-title">Running it outside the shop</p>
+<p>Setting up swerve simulation is a project of its own, and this section does not teach it. BasicSwerve is expected to already contain a working simulation so you can drive the drivetrain without the robot in the room. After the import, run that simulation from the repo's instructions. In a normal WPILib project that is the command palette, <code>WPILib: Simulate</code>.</p>
+<p>If simulation is not in the repo yet, it has to be added to BasicSwerve once, for the whole team. Do not build a second simulation inside a personal copy of the generated project.</p>
+</div>
+<p>At the shop, deploy BasicSwerve to the robot after the imported constants match the modules you just validated. The same project is what you simulate at home and what you deploy on the real drivetrain.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>

@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../3/">
+        <link rel="prev" href="../command_based/">
       
       
-        <link rel="next" href="../5/">
+        <link rel="next" href="../talonfx_position/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Triggers and User Input - The FRC Programming Guide</title>
+        <title>Triggers and Inputs - The FRC Programming Guide</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#triggers-and-user-input" class="md-skip">
+        <a href="#triggers-and-inputs" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Triggers and User Input
+              Triggers and Inputs
             
           </span>
         </div>
@@ -264,12 +264,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../1/" class="md-nav__link">
+      <a href="../programming_test_board/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    First Steps with WPILib
+    My First Robot Project
     
   </span>
   
@@ -287,12 +287,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../2/" class="md-nav__link">
+      <a href="../subsystem/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Command Based Programming Theory
+    What is a Subsystem
     
   </span>
   
@@ -310,12 +310,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../3/" class="md-nav__link">
+      <a href="../commands/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Basic Subsystems and Commands
+    What are Commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../command_based/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic Command Based Programming
     
   </span>
   
@@ -347,7 +370,7 @@
   
   
   <span class="md-ellipsis">
-    Triggers and User Input
+    Triggers and Inputs
     
   </span>
   
@@ -360,7 +383,7 @@
   
   
   <span class="md-ellipsis">
-    Triggers and User Input
+    Triggers and Inputs
     
   </span>
   
@@ -383,27 +406,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-a-roller-subsystem" class="md-nav__link">
+  <a href="#the-controller" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating a Roller Subsystem
+      The Controller
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-a-controller-object" class="md-nav__link">
+  <a href="#ontrue-and-onfalse" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating a Controller Object
+      onTrue and onFalse
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-triggers" class="md-nav__link">
+  <a href="#whiletrue" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating Triggers
+      whileTrue
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenges
     </span>
   </a>
   
@@ -425,12 +457,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../5/" class="md-nav__link">
+      <a href="../talonfx_position/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    The Fundamentals of Controls
+    Simple TalonFX Position Control
     
   </span>
   
@@ -448,12 +480,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../6/" class="md-nav__link">
+      <a href="../logging/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    The TalonFX Motor Controller
+    Logging Basics and AdvantageScope
     
   </span>
   
@@ -471,58 +503,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../7/" class="md-nav__link">
+      <a href="../final_test/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Advanced Commands and Command Groups
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../8/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Basic Logging and Visualization
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../programming_test_board/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Programming Test Board
+    Final Test
     
   </span>
   
@@ -536,256 +522,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Advanced Frc Programming
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Advanced Frc Programming
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Advanced-FRC-Programming/1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Suppliers, Comsumers, and Optionals
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Advanced-FRC-Programming/2/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Swerve with CTRE Swerve Drive
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Advanced-FRC-Programming/3/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Pathplanning with Pathplanner
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Advanced-FRC-Programming/4/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Vision with PhotonVision
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Advanced-FRC-Programming/5/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    AdvantageKit and Replay Systems
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Advanced-FRC-Programming/6/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Physics Simulation with MapleSim
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Advanced-FRC-Programming/7/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Unit Testing and Mocks
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    How To Troubleshoot
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../notes/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Notes
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -817,27 +553,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-a-roller-subsystem" class="md-nav__link">
+  <a href="#the-controller" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating a Roller Subsystem
+      The Controller
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-a-controller-object" class="md-nav__link">
+  <a href="#ontrue-and-onfalse" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating a Controller Object
+      onTrue and onFalse
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-triggers" class="md-nav__link">
+  <a href="#whiletrue" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating Triggers
+      whileTrue
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenges
     </span>
   </a>
   
@@ -859,52 +604,68 @@
 
 
 
-<h1 id="triggers-and-user-input"><strong>Triggers and User Input</strong></h1>
-<p>Now that we have our first subsystem we need to be able to trigger commands to occur. This is where triggers come in.
-First lets go to our <code>RobotContainer.java</code> file in the main codebase folder.</p>
-<h2 id="creating-a-roller-subsystem"><strong>Creating a Roller Subsystem</strong></h2>
-<p>At the top of the class lets create an instance of our <code>RollerSubsystem</code>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="n">RollerSubsystem</span><span class="w"> </span><span class="n">rollerSubsystem</span><span class="p">;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">public</span><span class="w"> </span><span class="nf">RobotContainer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">rollerSubsystem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RollerSubsystem</span><span class="p">();</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">configureBindings</span><span class="p">();</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
-</span></code></pre></div></p>
-<h2 id="creating-a-controller-object"><strong>Creating a Controller Object</strong></h2>
-<p>Now that we created our roller subsystem in the robot container, we need to create a controller that can trigger the commands it holds. Lets create that under our roller Subsystem:</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">public</span><span class="w"> </span><span class="n">RollerSubsystem</span><span class="w"> </span><span class="n">rollerSubsystem</span><span class="p">;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">public</span><span class="w"> </span><span class="n">CommandXboxController</span><span class="w"> </span><span class="n">controller</span><span class="p">;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kd">public</span><span class="w"> </span><span class="nf">RobotContainer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">rollerSubsystem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RollerSubsystem</span><span class="p">();</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">controller</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CommandXboxController</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="n">configureBindings</span><span class="p">();</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
+<h1 id="triggers-and-inputs"><strong>Triggers and Inputs</strong></h1>
+<p>A command just sits there until something schedules it. In teleop that something is usually a button. Open <code>RobotContainer.java</code> with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-p">P</kbd></span>. This file creates the subsystem, creates the controller, and connects buttons to commands.</p>
+<h2 id="the-controller"><strong>The Controller</strong></h2>
+<p>The top of the class should look like this. If your names are a little different, match them to what you already have.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="n">MotorSubsystem</span><span class="w"> </span><span class="n">motorSubsystem</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">public</span><span class="w"> </span><span class="n">CommandXboxController</span><span class="w"> </span><span class="n">controller</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kd">public</span><span class="w"> </span><span class="nf">RobotContainer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="n">motorSubsystem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MotorSubsystem</span><span class="p">();</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">controller</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CommandXboxController</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">configureBindings</span><span class="p">();</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
 </span></code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>We create a <code>CommandXboxController</code> instead of a <code>XboxController</code> as only the command based one supports triggering commands. We create it with port 0 meaning that this xbox controller will connect to whatever is connected to the first controller slot in the driverstation.</p>
-</div>
-<h2 id="creating-triggers"><strong>Creating Triggers</strong></h2>
-<p>Now its time to finally trigger some commands. This is where the <code>configureBindings</code> function comes in. Here we define our bindings (triggers) between the controller and our commands.</p>
+<p><code>CommandXboxController</code> is the one that can schedule commands. Port <code>0</code> is the first controller in the driver station. A plain <code>XboxController</code> can read buttons, but it will not run commands for you.</p>
+<h2 id="ontrue-and-onfalse"><strong>onTrue and onFalse</strong></h2>
+<p><code>configureBindings()</code> is where the buttons go.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">configureBindings</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="n">controller</span><span class="p">.</span><span class="na">a</span><span class="p">().</span><span class="na">onTrue</span><span class="p">(</span><span class="n">motorSubsystem</span><span class="p">.</span><span class="na">spin</span><span class="p">());</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><code>controller.a()</code> is true while A is held. <code>onTrue</code> runs the command at the moment the button goes from up to down.</p>
+<figure>
+    <img alt="Trigger Diagram" src="../../img/trigger_code_diagram.png" width="600" />
+<br />
+<figcaption>The trigger, the edge, and the command it schedules</figcaption>
+</figure>
+<p><code>onFalse</code> runs a command when the button comes back up. That is how the first project called <code>stop()</code>. With the <code>runEnd</code> version of <code>spin()</code>, you usually do not need <code>onFalse</code>. When the command is cancelled, its end lambda already sets the voltage to 0.</p>
+<h2 id="whiletrue"><strong>whileTrue</strong></h2>
+<p><code>whileTrue</code> starts the command when the button is pressed and cancels it when the button is released.</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">configureBindings</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="n">controller</span><span class="p">.</span><span class="na">a</span><span class="p">().</span><span class="na">onTrue</span><span class="p">(</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="n">rollerSubsystem</span><span class="p">.</span><span class="na">startRollersCommand</span><span class="p">()</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="p">);</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="n">controller</span><span class="p">.</span><span class="na">a</span><span class="p">().</span><span class="na">onFalse</span><span class="p">(</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="n">rollerSubsystem</span><span class="p">.</span><span class="na">stopRollersCommand</span><span class="p">()</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="p">);</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="n">controller</span><span class="p">.</span><span class="na">a</span><span class="p">().</span><span class="na">whileTrue</span><span class="p">(</span><span class="n">motorSubsystem</span><span class="p">.</span><span class="na">spin</span><span class="p">());</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">controller</span><span class="p">.</span><span class="na">b</span><span class="p">().</span><span class="na">whileTrue</span><span class="p">(</span><span class="n">motorSubsystem</span><span class="p">.</span><span class="na">holdVoltage</span><span class="p">(</span><span class="mi">6</span><span class="p">));</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>Here we use both the <code>onTrue</code> and <code>onFalse</code> triggers. These allow us to setup the controller so that way when we press the <span class="keys"><kbd class="key-a">A</kbd></span> button, the rollers will spin, and when we release the <span class="keys"><kbd class="key-a">A</kbd></span> button the rollers will stop.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For now you likely wont be able to deploy this code unless you have a roller with a talon style controller. We will get to simulation later, but until then it will be hard to deploy. If you really want to deploy you can modify the class to work with whatever kind of motor controller you have.</p>
-</div>
+<p>Press A and the motor spins at 3 volts. Let go and it stops. Press B and it spins at 6 volts until you let go. If you press B while A is held, B wins, because both commands need <code>MotorSubsystem</code> and only one can have it.</p>
+<p><code>whileTrue</code> is what you want when the action should last exactly as long as the button. <code>onTrue</code> is what you want when the action should start and then finish by itself, like a move to a position.</p>
+<p>Deploy, set the driver station to teleop, enable, and try both buttons.</p>
+<h2 id="challenges"><strong>Challenges</strong></h2>
+<p>Stay on the test board. If you get stuck, spend ~10-20min before asking for help.</p>
+<p>Easier:</p>
+<ol>
+<li>
+<p>Bind X to <code>holdVoltage(1)</code> with <code>whileTrue</code>. Deploy and feel how different 1 volt is from 6.</p>
+</li>
+<li>
+<p>Change A from <code>whileTrue</code> to <code>onTrue</code> and deploy. Press A and let go. With <code>runEnd</code>, think about whether the motor stops. Try it, then put A back to <code>whileTrue</code> if you want the hold behavior.</p>
+</li>
+</ol>
+<p>Medium:</p>
+<ol>
+<li>
+<p>Bind the right bumper to <code>spin()</code> and the left bumper to <code>holdVoltage(2)</code>. Hold one, then tap the other, and watch which one survives. Only one subsystem command should be running.</p>
+</li>
+<li>
+<p>Read the triggers on <code>CommandXboxController</code> besides the letter buttons. Bind one of the sticks' Y axis... actually do not bind an axis yet. Axes are not buttons. Find <code>controller.rightTrigger()</code> in the autocomplete and bind that to <code>holdVoltage</code> with <code>whileTrue</code>. The trigger is a button for this. The stick axis is a number, and we are not there yet.</p>
+</li>
+</ol>
+<p>Hard:</p>
+<ol>
+<li>Make the motor speed follow the right stick while the right bumper is held, and stop when the bumper is released. Hint: the stick is <code>controller.getRightY()</code>, and you can pass that into a command that reads it every cycle inside <code>run</code>. Deadband it a little or the motor will hum on a stick that is not perfectly centered. WPILib has <code>MathUtil.applyDeadband</code>.</li>
+</ol>
 
 
 
