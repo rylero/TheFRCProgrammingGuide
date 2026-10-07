@@ -572,7 +572,7 @@
 <li><strong>kV, cruise.</strong> Command a move long enough to reach cruise. kV is volts per rotations-per-second of the <em>profile</em> velocity. Raise it until measured velocity matches the flat top of the profile. If measured cruise is low, kV is low.</li>
 <li><strong>kA, acceleration.</strong> Watch the slope at the start of the move. Raise kA until measured velocity rises about as steeply as the profile. Leave it at 0 if the slope already matches.</li>
 <li><strong>kP, position error.</strong> This is the same unit as the basic lesson: volts per rotation of position error. Raise it until the shaft reaches the target and holds it. Back off when it oscillates or slams the end of the move.</li>
-<li><strong>kD, velocity error.</strong> Add a small kD only if kP overshoots. kD fights a velocity error. Too much kD buzzes. Leave kI at 0.</li>
+<li><strong>kD, velocity error.</strong> Add a small kD only if kP overshoots. kD fights a velocity error. Too much kD oscillates. Leave kI at 0.</li>
 </ol>
 <p>There is no kG on the test board. kG is the constant voltage that holds an elevator or arm against gravity. Add it only for those mechanisms, before kS.</p>
 <p>The sign of kS has to oppose friction. For Motion Magic, set <code>config.Slot0.StaticFeedforwardSign</code> to <code>StaticFeedforwardSignValue.UseClosedLoopSign</code> so the TalonFX picks the sign from the closed loop instead of from a velocity target that is zero at the end of the move.</p>
@@ -603,7 +603,7 @@
 <ol>
 <li><strong>kS.</strong> Raise it until the shaft is just about to turn, then back off one step.</li>
 <li><strong>kV.</strong> With kP still 0, raise kV until the measured velocity sits on the target during the flat section. kV is doing almost all of the work. If the graph is short of the target by the same amount at every speed, kV is still low.</li>
-<li><strong>kP.</strong> Raise it until a speed change settles quickly. Stop when the velocity line buzzes or chatters. Velocity kP is usually small, often under <code>0.5</code> on voltage control.</li>
+<li><strong>kP.</strong> Raise it until a speed change settles quickly. Stop when the velocity line oscillates. Velocity kP is usually small, often under <code>0.5</code> on voltage control.</li>
 <li><strong>kD.</strong> Leave it at 0 unless the speed oscillates after kP is set. kI stays 0.</li>
 </ol>
 <p>Bind it with <code>whileTrue</code>. Releasing the button runs the <code>runEnd</code> cleanup and drops the voltage to 0. A velocity loop left running will keep spinning.</p>

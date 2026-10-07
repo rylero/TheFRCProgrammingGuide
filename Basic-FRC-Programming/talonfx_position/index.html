@@ -614,7 +614,7 @@
 V = k_P \cdot (\text{target} - \text{measured})
 </script>
 </p>
-<p>kP is volts per rotation of error. Bigger kP pushes harder for the same miss. Too small and the shaft crawls or stops short. Too big and it buzzes or slams past the target. On the unloaded test board Falcon, start at <code>0.5</code>.</p>
+<p>kP is volts per rotation of error. Bigger kP pushes harder for the same miss. Too small and the shaft crawls or stops short. Too big and it oscillates or slams past the target. On the unloaded test board Falcon, start at <code>0.5</code>.</p>
 <p>The number we send is rotor rotations. The default gear ratio is 1, so 1.0 is one turn of the motor shaft. Five rotations is a small move on this board. Do not start at 100.</p>
 <h2 id="apply-the-config"><strong>Apply the Config</strong></h2>
 <p>Gains do not go in <code>setControl</code>. They go in the config, and we apply that once from the constructor.</p>
@@ -647,7 +647,7 @@ V = k_P \cdot (\text{target} - \text{measured})
 <div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">controller</span><span class="p">.</span><span class="na">a</span><span class="p">().</span><span class="na">whileTrue</span><span class="p">(</span><span class="n">motorSubsystem</span><span class="p">.</span><span class="na">goToPosition</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">controller</span><span class="p">.</span><span class="na">b</span><span class="p">().</span><span class="na">whileTrue</span><span class="p">(</span><span class="n">motorSubsystem</span><span class="p">.</span><span class="na">goToPosition</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
 </span></code></pre></div>
-<p>Deploy, enable, press A. The shaft should turn about five rotations and hold. Press B and it should go back to where it was when the code booted. If it barely moves, try <code>1.0</code>, then <code>2.0</code>. If it buzzes, go back down. Change one number, redeploy, try again.</p>
+<p>Deploy, enable, press A. The shaft should turn about five rotations and hold. Press B and it should go back to where it was when the code booted. If it barely moves, try <code>1.0</code>, then <code>2.0</code>. If it oscillates, go back down. Change one number, redeploy, try again.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>kP by itself is enough for this unloaded motor and a nearby target. Elevators, arms, and anything that has to limit its speed use feedforward and Motion Magic. That is the next section. Same config object. We add fields to it later.</p>
@@ -669,7 +669,7 @@ V = k_P \cdot (\text{target} - \text{measured})
 <p>Bind X to <code>goToPosition(-3)</code>. Make sure the shaft can spin that way without hitting a wire. Press A, then X, then B.</p>
 </li>
 <li>
-<p>Find a kP that is too high. You will know. Write the value in a comment next to <code>config.Slot0.kP</code>, then put back a value that holds without buzzing. The comment is so you remember what "too hot" felt like.</p>
+<p>Find a kP that is too high. You will know. Write the value in a comment next to <code>config.Slot0.kP</code>, then put back a value that holds without oscillating. The comment is so you remember what "too hot" felt like.</p>
 </li>
 </ol>
 <p>Hard:</p>
