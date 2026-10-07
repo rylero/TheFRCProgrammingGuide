@@ -181,18 +181,8 @@ Here is the final structure of our code:
 
 
 ## **Challenges**
-Now that you have officialy coded your first FRC robot its time to try writing a little bit of code yourself. These challenges work in increasing difficulty so make sure to go in order. If you get stuck, spend ~10-20min on your own trying to solve it before asking for help. One of the most important skills you will learn as a programmer is reading documentation and working through problems. I would start with the first easy challenge as they get pretty hard after that and it will help ease you into programming on your own.
+Try these before you move on. If you get stuck, spend ~10-20min on your own before asking for help.
 
-Easier Challenges (these are still pretty hard):
+1. Change the voltage in ```spin``` to something else between 0 and 6. Deploy and press A. Then put it back.
 
-1. Try changing the voltage you set the spin motor to. Try any voltage between 0 and 12 volts and see how it effects the motor!
-
-2. Try creating a new command. Look at the two commands we already created and create a new one, called ```spinFast``` that runs the motor at a higher voltage than ```spin```. Make sure to bind it to the b button press and bind the b buttons release to your stop command.
-
-3. Create a new control scheme. Instead of pressing and releasing to control the motor speed, try something different. For example, when a is pressed, spin, when b is pressed, spin fast, and when c is pressed, stop.
-
-Medium Challenges (these will require some research):
-
-1. Create an autonomouse command. Replace the autonomous command in the RobotContainer with a custom command that spins the motor for 1 second and then stops. Hint: use ```Commands.sequence``` and ```Commands.waitSeconds``` This page may help: <a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html">Commands Java Doc</a>
-
-The next lessons take this same subsystem apart: what a subsystem is, what a command is, how triggers schedule those commands, then position control and logging. The final test at the end of this section is where those pieces get combined.
+2. Copy ```spin``` and make ```spinFast``` with a higher voltage. Bind B the same way A is bound: press to ```spinFast```, release to ```stop```. Deploy and try both buttons.

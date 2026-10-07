@@ -64,20 +64,8 @@ Deploy, enable, press A. The shaft should turn about five rotations and hold. Pr
     kP by itself is enough for this unloaded motor and a nearby target. Elevators, arms, and anything that has to limit its speed use feedforward and Motion Magic. That is the next section. Same config object. We add fields to it later.
 
 ## **Challenges**
-Tune on the real motor. If you get stuck, spend ~10-20min before asking for help.
+If you get stuck, spend ~10-20min before asking for help.
 
-Easier:
+1. Change A's target from 5 rotations to 2. Deploy and press A, then B to come back.
 
-1. Change the A button target from 5 rotations to 2, deploy, and press A. Then try 10. Pick a target you are willing to run twice in a row.
-
-2. Swap brake for ```NeutralModeValue.Coast```, deploy, and turn the shaft by hand with the robot disabled. Then put brake back and try again. You should feel the difference before you ever enable.
-
-Medium:
-
-1. Bind X to ```goToPosition(-3)```. Make sure the shaft can spin that way without hitting a wire. Press A, then X, then B.
-
-2. Find a kP that is too high. You will know. Write the value in a comment next to ```config.Slot0.kP```, then put back a value that holds without oscillating. The comment is so you remember what "too hot" felt like.
-
-Hard:
-
-1. Make ```goToPosition``` finish on its own when the measured position is within 0.5 rotations of the target, and bind it with ```onTrue``` instead of ```whileTrue```. Hint: ```.until(() -> ...)``` on the command, and ```motor.getPosition().getValueAsDouble()```. Press A once and let go. The motor should still finish the move. If it quits the instant you let go, you are still on ```whileTrue```.
+2. If the shaft oscillates, lower ```kP``` a bit and redeploy. If it barely moves, raise ```kP``` a bit and redeploy. Change one number at a time. Leave in a value that holds still at the target.

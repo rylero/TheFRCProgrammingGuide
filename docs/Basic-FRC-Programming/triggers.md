@@ -54,20 +54,8 @@ Press A and the motor spins at 3 volts. Let go and it stops. Press B and it spin
 Deploy, set the driver station to teleop, enable, and try both buttons.
 
 ## **Challenges**
-Stay on the test board. If you get stuck, spend ~10-20min before asking for help.
+If you get stuck, spend ~10-20min before asking for help.
 
-Easier:
+1. Bind X to ```holdVoltage(1)``` with ```whileTrue```. Deploy and press X, then B. 1 volt should be much slower than 6.
 
-1. Bind X to ```holdVoltage(1)``` with ```whileTrue```. Deploy and feel how different 1 volt is from 6.
-
-2. Change A from ```whileTrue``` to ```onTrue``` and deploy. Press A and let go. With ```runEnd```, think about whether the motor stops. Try it, then put A back to ```whileTrue``` if you want the hold behavior.
-
-Medium:
-
-1. Bind the right bumper to ```spin()``` and the left bumper to ```holdVoltage(2)```. Hold one, then tap the other, and watch which one survives. Only one subsystem command should be running.
-
-2. Read the triggers on ```CommandXboxController``` besides the letter buttons. Bind one of the sticks' Y axis... actually do not bind an axis yet. Axes are not buttons. Find ```controller.rightTrigger()``` in the autocomplete and bind that to ```holdVoltage``` with ```whileTrue```. The trigger is a button for this. The stick axis is a number, and we are not there yet.
-
-Hard:
-
-1. Make the motor speed follow the right stick while the right bumper is held, and stop when the bumper is released. Hint: the stick is ```controller.getRightY()```, and you can pass that into a command that reads it every cycle inside ```run```. Deadband it a little or the motor will hum on a stick that is not perfectly centered. WPILib has ```MathUtil.applyDeadband```.
+2. Hold A, and while you are still holding it, press B. The motor should switch to B's voltage. Only one command can use the subsystem at a time.

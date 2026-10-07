@@ -78,18 +78,8 @@ public class MotorSubsystem extends SubsystemBase {
 These methods are public so ```RobotContainer``` can call them. They return a command. They do not move the motor at the moment you call them. The next lesson hooks them up to buttons.
 
 ## **Challenges**
-Code these in ```MotorSubsystem``` and deploy. If you get stuck, spend ~10-20min before asking for help.
+If you get stuck, spend ~10-20min before asking for help.
 
-Easier:
+1. Add ```spinFast()``` the same way as ```spin()```, but use 6 volts instead of 3. It should still set the voltage to 0 when the command ends.
 
-1. Add ```spinFast()``` that is a ```runEnd``` at a higher voltage than ```spin()```, and that sets the voltage back to 0 when it ends. Do not bind it yet if you do not want to. Getting it to compile is the goal.
-
-2. Call ```holdVoltage(4)``` from a scratch ```public Command``` named ```test``` that just returns it. Then delete ```test```. The point is seeing that a command method can call another command method.
-
-Medium:
-
-1. Change ```holdVoltage``` so it refuses to send more than 8 volts or less than -8. Use ```Math.min``` and ```Math.max``` inside the lambda, or clamp before the ```run```. Deploy is optional for this one. Read the method back and make sure a call with 12 cannot actually send 12.
-
-Hard:
-
-1. Look up ```startEnd``` on ```Subsystem``` in the WPILib docs. It runs one lambda when the command starts and one when it ends, and it does not keep running in between. Make a ```pulse``` command with it that sets 6 volts on start and 0 on end. Compare what it does to ```runEnd``` when you hold the button. We will bind buttons in the next lesson, so you can wait and try this one after that if you want: <a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Subsystem.html">Subsystem Java Doc</a>
+2. In ```RobotContainer```, bind B to ```spinFast()``` the same way A is bound to ```spin()```. Deploy, enable, and try A and B.

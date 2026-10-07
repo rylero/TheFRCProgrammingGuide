@@ -49,20 +49,8 @@ The graph sticks to "now" while you are connected. Scroll left to look at the mo
     AdvantageScope can also open a ```.wpilog``` later and replay a match. This lesson is only the live connection. If a field is missing, enable the robot once. Nothing gets published until the code is running.
 
 ## **Challenges**
-Do these with AdvantageScope open. If you get stuck, spend ~10-20min before asking for help. The <a href="https://docs.advantagescope.org/">AdvantageScope docs</a> are worth having open for the last one.
+If you get stuck, spend ~10-20min before asking for help.
 
-Easier:
+1. Also log ```motor.getMotorVoltage().getValueAsDouble()``` as ```Motor/Voltage```. Drag it onto the graph and press A. Voltage should jump when the move starts, then settle when the shaft is holding.
 
-1. Also log the voltage with ```motor.getMotorVoltage().getValueAsDouble()``` under the name ```Motor/Voltage```. Drag it onto the graph and press A. You should see voltage jump when the move starts.
-
-2. Scroll left after a move and hover the graph. Read the position and the target at the same time. Are they actually on top of each other at the end, or is the motor short?
-
-Medium:
-
-1. Log a fourth number, ```Motor/Error```, that is target minus measured position. After a good move it should settle near 0. If your kP is too small it will sit at some leftover error. Try it.
-
-2. Disconnect AdvantageScope, press a button, then connect again. The move you did while it was disconnected is gone from the live graph. That is why we will care about log files later. For now, just notice it.
-
-Hard:
-
-1. Log the applied output with ```motor.getClosedLoopReference().getValueAsDouble()``` or, if that signal is not the one you want, ```motor.getDutyCycle().getValueAsDouble()```. One of those will show you what the controller is actually asking for during the move. Get at least one extra TalonFX signal on the graph besides position and velocity. The status signal page is here: <a href="https://v6.docs.ctr-electronics.com/en/stable/docs/api-reference/api-usage/status-signals.html">Status Signals</a>
+2. Scroll left and hover the end of the move. Position should be close to the target. If it is not, your ```kP``` from the last lesson is still off.

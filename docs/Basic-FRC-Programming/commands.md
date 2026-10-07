@@ -39,16 +39,8 @@ When a button schedules a command, the scheduler puts it on a list. Every cycle 
 ```runOnce``` on ```MotorSubsystem``` also requires the subsystem for us. That single line is a whole command. Next lesson we will use a couple more helpers for jobs that need to keep running.
 
 ## **Challenges**
-Deploy after each one and watch the motor, or the Riolog. If you get stuck, spend ~10-20min on it before asking for help.
+If you get stuck, spend ~10-20min before asking for help.
 
-Easier:
+1. In ```spin()```, add ```System.out.println("spin");``` next to ```setVoltage```. Deploy, press A a few times, and look at RioLog. You should get one line per press. Then take the print out.
 
-1. Inside the ```spin()``` lambda, add ```System.out.println("spin");``` next to the ```setVoltage```. Press A a few times. You should get one print per press, because ```runOnce``` runs once and finishes.
-
-2. Change 3 volts to 1 volt, deploy, and press A. Then try 8. Put it back to something that does not scare you.
-
-Medium:
-
-1. Open ```Robot.java``` with ++ctrl+p++ and find where the scheduler is run. It is a one line call inside the robot's periodic method. You do not need to change it. You need to know it is already there so you stop looking for a loop inside your subsystem.
-
-2. Make a second command called ```stop``` that is a ```runOnce``` setting the voltage to 0. Do not bind it yet. Just get it to compile. We bind it in the triggers lesson.
+2. You should already have ```stop()``` from the first project. If you do not, add it: a ```runOnce``` that sets the voltage to 0. It just needs to compile. We will bind it again in the next lesson.
