@@ -432,19 +432,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Final Test
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -456,34 +443,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Requirements
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -517,23 +476,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Requirements
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -549,16 +491,13 @@
 
 
 <h1 id="final-test"><strong>Final Test</strong></h1>
-<p>Do this on the test board with the <code>MotorSubsystem</code> you already have. You are finished when every requirement below is true.</p>
-<h2 id="requirements"><strong>Requirements</strong></h2>
-<ul>
-<li>[ ] The TalonFX is configured in the subsystem constructor with a <code>kP</code> and brake neutral mode.</li>
-<li>[ ] One button drives the motor to a position a few rotations away from 0. The motor still goes there and holds after the button is released.</li>
-<li>[ ] A second button drives the motor back to 0 and holds there after that button is released.</li>
-<li>[ ] <code>periodic()</code> logs measured position, measured velocity, and the target.</li>
-<li>[ ] AdvantageScope shows one run with both button presses. The target changes, and the measured position meets it without oscillating.</li>
-</ul>
-<p>If you get stuck, spend ~10-20min on the requirement that is failing before asking for help.</p>
+<ol>
+<li>The TalonFX is configured in the subsystem constructor with a kP and brake neutral mode.</li>
+<li>One button drives the motor to a position a few rotations away from 0, and the motor holds there after the button is released.</li>
+<li>A second button drives the motor back to 0, and the motor holds there after that button is released.</li>
+<li><code>periodic()</code> logs measured position, measured velocity, and the target.</li>
+<li>AdvantageScope shows one run of both button presses. The target changes, and the measured position meets it without oscillating.</li>
+</ol>
 
 
 

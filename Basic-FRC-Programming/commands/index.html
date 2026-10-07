@@ -419,15 +419,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#challenges" class="md-nav__link">
-    <span class="md-ellipsis">
-      Challenges
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -645,15 +636,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#challenges" class="md-nav__link">
-    <span class="md-ellipsis">
-      Challenges
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -694,16 +676,6 @@
 <p><img align="left" alt="Command Scheduler" src="../../img/command_scheduler.png" width="300" /></p>
 <p>When a button schedules a command, the scheduler puts it on a list. Every cycle it calls <code>execute()</code> and <code>isFinished()</code> on whatever is on that list. If the new command needs a subsystem that is already in use, the scheduler calls <code>end(true)</code> on the old one and then starts the new one. When a command finishes, it gets taken off the list.</p>
 <p><code>runOnce</code> on <code>MotorSubsystem</code> also requires the subsystem for us. That single line is a whole command. Next lesson we will use a couple more helpers for jobs that need to keep running.</p>
-<h2 id="challenges"><strong>Challenges</strong></h2>
-<p>If you get stuck, spend ~10-20min before asking for help.</p>
-<ol>
-<li>
-<p>In <code>spin()</code>, add <code>System.out.println("spin");</code> next to <code>setVoltage</code>. Deploy, press A a few times, and look at RioLog. You should get one line per press. Then take the print out.</p>
-</li>
-<li>
-<p>You should already have <code>stop()</code> from the first project. If you do not, add it: a <code>runOnce</code> that sets the voltage to 0. It just needs to compile. We will bind it again in the next lesson.</p>
-</li>
-</ol>
 
 
 
