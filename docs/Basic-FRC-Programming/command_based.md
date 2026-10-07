@@ -76,10 +76,3 @@ public class MotorSubsystem extends SubsystemBase {
 ```
 
 These methods are public so ```RobotContainer``` can call them. They return a command. They do not move the motor at the moment you call them. The next lesson hooks them up to buttons.
-
-## **Challenges**
-If you get stuck, spend ~10-20min before asking for help.
-
-1. Add ```spinFast()``` the same way as ```spin()```, but use 6 volts instead of 3. It should still set the voltage to 0 when the command ends.
-
-2. In ```RobotContainer```, bind B to ```spinFast()``` the same way A is bound to ```spin()```. Deploy, enable, and try A and B.

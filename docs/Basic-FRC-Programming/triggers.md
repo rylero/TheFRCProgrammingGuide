@@ -52,10 +52,3 @@ Press A and the motor spins at 3 volts. Let go and it stops. Press B and it spin
 ```whileTrue``` is what you want when the action should last exactly as long as the button. ```onTrue``` is what you want when the action should start and then finish by itself, like a move to a position.
 
 Deploy, set the driver station to teleop, enable, and try both buttons.
-
-## **Challenges**
-If you get stuck, spend ~10-20min before asking for help.
-
-1. Bind X to ```holdVoltage(1)``` with ```whileTrue```. Deploy and press X, then B. 1 volt should be much slower than 6.
-
-2. Hold A, and while you are still holding it, press B. The motor should switch to B's voltage. Only one command can use the subsystem at a time.

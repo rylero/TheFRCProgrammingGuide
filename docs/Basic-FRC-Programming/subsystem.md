@@ -41,8 +41,3 @@ public void periodic() {
 
 ## **One Command at a Time**
 Only one command is allowed to use a subsystem at a time. If a new command needs ```MotorSubsystem``` while another one already has it, the scheduler stops the old command and starts the new one. You do not write that stop yourself. Requiring the subsystem is enough, and the command helpers do that for you.
-
-## **Challenges**
-If you get stuck, spend ~10-20min before asking for help.
-
-1. Put ```System.out.println("subsystem created");``` as the first line inside the constructor. Save, deploy, and open RioLog. You should see that line once. Then delete the print.

@@ -37,10 +37,3 @@ The scheduler is the loop that actually runs commands. ```Robot.java``` already 
 When a button schedules a command, the scheduler puts it on a list. Every cycle it calls ```execute()``` and ```isFinished()``` on whatever is on that list. If the new command needs a subsystem that is already in use, the scheduler calls ```end(true)``` on the old one and then starts the new one. When a command finishes, it gets taken off the list.
 
 ```runOnce``` on ```MotorSubsystem``` also requires the subsystem for us. That single line is a whole command. Next lesson we will use a couple more helpers for jobs that need to keep running.
-
-## **Challenges**
-If you get stuck, spend ~10-20min before asking for help.
-
-1. In ```spin()```, add ```System.out.println("spin");``` next to ```setVoltage```. Deploy, press A a few times, and look at RioLog. You should get one line per press. Then take the print out.
-
-2. You should already have ```stop()``` from the first project. If you do not, add it: a ```runOnce``` that sets the voltage to 0. It just needs to compile. We will bind it again in the next lesson.

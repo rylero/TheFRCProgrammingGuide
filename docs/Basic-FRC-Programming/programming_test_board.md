@@ -179,10 +179,3 @@ Now that we have written triggers for our commands, its time to test! Deploy the
 Here is the final structure of our code:
 ![Code Structure](../img/code_structure.png){ width="600" }
 
-
-## **Challenges**
-Try these before you move on. If you get stuck, spend ~10-20min on your own before asking for help.
-
-1. Change the voltage in ```spin``` to something else between 0 and 6. Deploy and press A. Then put it back.
-
-2. Copy ```spin``` and make ```spinFast``` with a higher voltage. Bind B the same way A is bound: press to ```spinFast```, release to ```stop```. Deploy and try both buttons.

@@ -47,10 +47,3 @@ The graph sticks to "now" while you are connected. Scroll left to look at the mo
 !!! note
 
     AdvantageScope can also open a ```.wpilog``` later and replay a match. This lesson is only the live connection. If a field is missing, enable the robot once. Nothing gets published until the code is running.
-
-## **Challenges**
-If you get stuck, spend ~10-20min before asking for help.
-
-1. Also log ```motor.getMotorVoltage().getValueAsDouble()``` as ```Motor/Voltage```. Drag it onto the graph and press A. Voltage should jump when the move starts, then settle when the shaft is holding.
-
-2. Scroll left and hover the end of the move. Position should be close to the target. If it is not, your ```kP``` from the last lesson is still off.

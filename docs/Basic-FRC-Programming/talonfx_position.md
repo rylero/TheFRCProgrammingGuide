@@ -62,10 +62,3 @@ Deploy, enable, press A. The shaft should turn about five rotations and hold. Pr
 !!! note
 
     kP by itself is enough for this unloaded motor and a nearby target. Elevators, arms, and anything that has to limit its speed use feedforward and Motion Magic. That is the next section. Same config object. We add fields to it later.
-
-## **Challenges**
-If you get stuck, spend ~10-20min before asking for help.
-
-1. Change A's target from 5 rotations to 2. Deploy and press A, then B to come back.
-
-2. If the shaft oscillates, lower ```kP``` a bit and redeploy. If it barely moves, raise ```kP``` a bit and redeploy. Change one number at a time. Leave in a value that holds still at the target.
